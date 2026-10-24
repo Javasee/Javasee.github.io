@@ -8,13 +8,13 @@
 }
 .nav-search-input {
     width: 130px;
-    /* 输入盒总高 = tab 锚盒总高（内容盒+16），同高同中心 →
-       底线 2px 带 [−6,−4] 与 tab 下划线带（盒底 −6..−4）精确重合 */
+    /* 输入盒总高 = tab 锚盒总高 − 8（同中心时盒底矮 4px，底线带 [−6,−4]
+       与 tab 下划线带精确重合）；pt−pb=2 保证文字中心与 tab 文字对齐 */
     box-sizing: border-box;
     font-family: inherit;
     font-size: 16px;
     line-height: normal;
-    padding: 8px 4px 6px;
+    padding: 4px 4px 2px;
     color: var(--md-on-surface);
     background: transparent;
     border: none;
