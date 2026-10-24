@@ -6,12 +6,12 @@
 }
 .nav-search-input {
     width: 130px;
-    line-height: 1;
-    padding: 6px 4px 3px;
-    position: relative;
-    top: 2px;
+    /* 与 tab 完全同构：同字号/同上边距，底线 padding-bottom:4px 精确落在
+       tab 下划线的同一相对位置（tab 线在盒底 -6..-4 带） */
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
+    line-height: normal;
+    padding: 8px 4px 4px;
     color: var(--md-on-surface);
     background: transparent;
     border: none;
