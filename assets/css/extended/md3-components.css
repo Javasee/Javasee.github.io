@@ -7,6 +7,7 @@
 }
 .header .menu li a {
     position: relative;
+    display: inline-block;
     background: transparent;
     border-radius: 0;
     padding: 8px 4px;
@@ -18,7 +19,7 @@
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -4px;
+    bottom: 3px;
     height: 2px;
     width: 0;
     background: var(--md-primary);
@@ -35,6 +36,7 @@
 }
 .header .menu li a.active {
     color: var(--md-primary);
+    text-decoration: none;
 }
 .header .menu li a.active::after {
     width: 100%;
@@ -58,23 +60,31 @@ a {
     border-radius: var(--md-shape-xs);
 }
 
-/* ---- 文章卡片：扁平（无阴影，悬停变色） ---- */
+/* ---- 文章卡片：扁平（无阴影，悬停变色）；首页首篇与列表块等大 ---- */
 .first-entry, .post-entry {
     background: var(--md-surface-container-low);
     border: 1px solid var(--md-outline-variant);
     border-radius: var(--md-shape-lg);
+    padding: var(--gap);
+    margin: 0 0 var(--gap) 0;
+    min-height: unset;
     transition: background-color 0.25s var(--md-motion-emphasized),
         border-color 0.25s var(--md-motion-emphasized);
 }
-.first-entry:hover, .post-entry:hover {
+.first-entry:hover, .post-entry:hover,
+.first-entry:focus-within, .post-entry:focus-within {
     background: var(--md-surface-container);
     border-color: var(--md-outline);
+    transform: none;
 }
-.first-entry {
-    background: var(--md-surface-container);
+.first-entry .entry-header h1,
+.first-entry .entry-header h2 {
+    font-size: 24px;
+    line-height: 1.3;
 }
-.first-entry:hover {
-    background: var(--md-surface-container-high);
+.first-entry .entry-content {
+    margin: 8px 0;
+    font-size: 14px;
 }
 .entry-cover img, .post-content img {
     border-radius: var(--md-shape-md);
