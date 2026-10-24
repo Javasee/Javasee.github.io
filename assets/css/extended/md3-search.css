@@ -6,7 +6,7 @@
 }
 .nav-search-input {
     width: 130px;
-    padding: 6px 4px;
+    padding: 6px 4px 2px;
     font-family: inherit;
     font-size: 14px;
     color: var(--md-on-surface);
@@ -60,7 +60,13 @@
     color: var(--md-on-surface-variant);
 }
 @media (max-width: 800px) {
-    .nav-search {
-        display: none;
+    .nav-search-input {
+        width: 90px;
+    }
+    .nav-search-input:focus {
+        width: 150px;
+    }
+    .nav-search-results {
+        width: min(320px, calc(100vw - 32px));
     }
 }
