@@ -23,7 +23,7 @@
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -3px;
+    bottom: -4px;
     height: 2px;
     width: 0;
     background: var(--md-primary);

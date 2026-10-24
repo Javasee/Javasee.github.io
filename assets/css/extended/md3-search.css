@@ -6,7 +6,8 @@
 }
 .nav-search-input {
     width: 130px;
-    padding: 6px 4px 1px;
+    line-height: 1;
+    padding: 6px 4px 3px;
     font-family: inherit;
     font-size: 14px;
     color: var(--md-on-surface);
@@ -60,16 +61,8 @@
     color: var(--md-on-surface-variant);
 }
 @media (max-width: 800px) {
+    /* 移动端导航栏放不下，先屏蔽（后续调试第二行方案） */
     .nav-search {
-        align-self: center;
-    }
-    .nav-search-input {
-        width: 90px;
-    }
-    .nav-search-input:focus {
-        width: 90px;
-    }
-    .nav-search-results {
-        width: min(320px, calc(100vw - 32px));
+        display: none;
     }
 }
