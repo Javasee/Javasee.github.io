@@ -1,0 +1,137 @@
+/* ===== Material 3 设计令牌 =====
+   种子色 #908CA7（灰紫）· 色板由 OKLab 色调环计算生成
+   纸模变量（PaperMod vars）← MD3 语义色映射 */
+
+:root {
+    /* MD3 Light scheme */
+    --md-primary: #5f5b74;
+    --md-on-primary: #ffffff;
+    --md-primary-container: #e3dffd;
+    --md-on-primary-container: #1d192d;
+    --md-secondary: #5f5d69;
+    --md-secondary-container: #e3e1f0;
+    --md-on-secondary-container: #1c1a25;
+    --md-tertiary: #725762;
+    --md-tertiary-container: #fbdae7;
+    --md-on-tertiary-container: #2b141f;
+    --md-surface: #fcfcff;
+    --md-surface-dim: #e8e8eb;
+    --md-surface-container-low: #f4f3f7;
+    --md-surface-container: #eeedf1;
+    --md-surface-container-high: #e8e8eb;
+    --md-surface-container-highest: #e2e2e6;
+    --md-on-surface: #1c1b1e;
+    --md-on-surface-variant: #47464b;
+    --md-outline: #77767c;
+    --md-outline-variant: #c6c6cc;
+    --md-inverse-surface: #303033;
+    --md-inverse-on-surface: #f4f3f7;
+    --md-error: #ba1a1a;
+
+    /* 影印到 PaperMod 变量 */
+    --theme: var(--md-surface);
+    --entry: var(--md-surface-container-low);
+    --primary: var(--md-primary);
+    --secondary: var(--md-on-surface-variant);
+    --tertiary: var(--md-secondary-container);
+    --content: var(--md-on-surface);
+    --code-block-bg: var(--md-surface-container);
+    --code-bg: var(--md-surface-container-high);
+    --border: var(--md-outline-variant);
+    --radius: 12px;
+
+    /* MD3 组件令牌 */
+    --md-elevation-1: 0 1px 2px 0 rgba(31, 27, 42, 0.10), 0 1px 3px 1px rgba(31, 27, 42, 0.06);
+    --md-elevation-2: 0 1px 2px 0 rgba(31, 27, 42, 0.12), 0 2px 6px 2px rgba(31, 27, 42, 0.08);
+    --md-elevation-3: 0 4px 8px 3px rgba(31, 27, 42, 0.10), 0 1px 3px rgba(31, 27, 42, 0.10);
+    --md-motion-emphasized: cubic-bezier(0.2, 0, 0, 1);
+    --md-shape-xs: 4px;
+    --md-shape-sm: 8px;
+    --md-shape-md: 12px;
+    --md-shape-lg: 16px;
+    --md-shape-full: 999px;
+}
+
+:root[data-theme="dark"] {
+    /* MD3 Dark scheme */
+    --md-primary: #c7c3e0;
+    --md-on-primary: #312d44;
+    --md-primary-container: #48445c;
+    --md-on-primary-container: #e3dffd;
+    --md-secondary: #c7c5d3;
+    --md-secondary-container: #474551;
+    --md-on-secondary-container: #e3e1f0;
+    --md-tertiary: #debecb;
+    --md-tertiary-container: #593f4a;
+    --md-on-tertiary-container: #fbdae7;
+    --md-surface: #0e0e10;
+    --md-surface-dim: #0e0e10;
+    --md-surface-container-low: #1c1b1e;
+    --md-surface-container: #211f23;
+    --md-surface-container-high: #2b292e;
+    --md-surface-container-highest: #353439;
+    --md-on-surface: #e2e2e6;
+    --md-on-surface-variant: #c6c6cc;
+    --md-outline: #919096;
+    --md-outline-variant: #47464b;
+    --md-inverse-surface: #e2e2e6;
+    --md-inverse-on-surface: #303033;
+
+    --theme: var(--md-surface);
+    --entry: var(--md-surface-container-low);
+    --primary: var(--md-primary);
+    --secondary: var(--md-on-surface-variant);
+    --tertiary: var(--md-secondary-container);
+    --content: var(--md-on-surface);
+    --code-block-bg: var(--md-surface-container);
+    --code-bg: var(--md-surface-container-high);
+    --border: var(--md-outline-variant);
+
+    --md-elevation-1: 0 1px 2px 0 rgba(0, 0, 0, 0.30), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+    --md-elevation-2: 0 1px 2px 0 rgba(0, 0, 0, 0.32), 0 2px 6px 2px rgba(0, 0, 0, 0.18);
+    --md-elevation-3: 0 4px 8px 3px rgba(0, 0, 0, 0.28), 0 1px 3px rgba(0, 0, 0, 0.20);
+}
+
+/* ===== 排版：MD3 中文适配 =====
+   Roboto（拉丁，自托管）→ 思源黑体/雅黑（中文，系统字体） */
+:root {
+    --md-font-sans: 'Roboto', 'Noto Sans SC', 'Microsoft YaHei UI',
+        'Microsoft YaHei', 'PingFang SC', sans-serif;
+    --md-font-mono: 'Roboto Mono', 'Cascadia Code', Consolas,
+        'Microsoft YaHei UI', monospace;
+}
+
+body {
+    font-family: var(--md-font-sans);
+    letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6, .post-title, .entry-title, .logo {
+    font-family: var(--md-font-sans);
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+code, pre, .lnt, .ln {
+    font-family: var(--md-font-mono);
+}
+
+::selection {
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+}
+
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid var(--md-primary);
+    outline-offset: 2px;
+    border-radius: var(--md-shape-xs);
+}
+
+/* 主题切换的强调缓动 */
+body, .header, .footer, .post-entry, .first-entry, .menu a,
+.post-tags a, .terms-tags a, .paginav, .toc {
+    transition: background-color 0.25s var(--md-motion-emphasized),
+        color 0.25s var(--md-motion-emphasized),
+        border-color 0.25s var(--md-motion-emphasized),
+        box-shadow 0.25s var(--md-motion-emphasized);
+}

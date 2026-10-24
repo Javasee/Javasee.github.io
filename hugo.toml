@@ -71,4 +71,4 @@ buildFuture = false
     [markup.goldmark.renderer]
       unsafe = true
   [markup.highlight]
-    noClasses = true
+    noClasses = false

@@ -1,0 +1,301 @@
+/* ===== Material 3 组件重绘（纯 CSS，不改主题源码） ===== */
+
+/* ---- 顶部导航：圆角胶囊悬停 + 表面色 ---- */
+.header {
+    background: var(--md-surface);
+    border-bottom: 1px solid var(--md-outline-variant);
+}
+.header .menu li a {
+    border-radius: var(--md-shape-full);
+    padding: 6px 14px;
+    color: var(--md-on-surface-variant);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+.header .menu li a:hover,
+.header .menu li a:focus-visible {
+    background: var(--md-secondary-container);
+    color: var(--md-on-secondary-container);
+}
+.header .menu li a.active {
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+}
+.logo {
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* ---- 链接 ---- */
+a {
+    color: var(--md-primary);
+}
+.md-content a:not(.anchor) {
+    text-decoration-color: color-mix(in srgb, var(--md-primary) 45%, transparent);
+    text-underline-offset: 3px;
+}
+.md-content a:not(.anchor):hover {
+    text-decoration-color: var(--md-primary);
+    background: color-mix(in srgb, var(--md-primary) 10%, transparent);
+    border-radius: var(--md-shape-xs);
+}
+
+/* ---- 文章卡片：MD3 卡片 + 海拔 + 悬停抬升 ---- */
+.first-entry, .post-entry {
+    background: var(--md-surface-container-low);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-lg);
+    box-shadow: var(--md-elevation-1);
+    transition: box-shadow 0.25s var(--md-motion-emphasized),
+        transform 0.25s var(--md-motion-emphasized);
+}
+.first-entry:hover, .post-entry:hover {
+    box-shadow: var(--md-elevation-2);
+    transform: translateY(-2px);
+}
+.first-entry {
+    background: var(--md-surface-container);
+}
+.entry-cover img, .post-content img {
+    border-radius: var(--md-shape-md);
+}
+.post-title, .entry-title {
+    color: var(--md-on-surface);
+}
+.post-title a:hover, .entry-title a:hover {
+    color: var(--md-primary);
+}
+.post-meta {
+    color: var(--md-on-surface-variant);
+    font-size: 0.875em;
+    letter-spacing: 0.025em;
+}
+
+/* ---- 标签：MD3 胶囊 Chip ---- */
+.post-tags a, .terms-tags a {
+    background: var(--md-secondary-container);
+    color: var(--md-on-secondary-container);
+    border-radius: var(--md-shape-sm);
+    padding: 4px 12px;
+    font-size: 0.82em;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    border: none;
+}
+.post-tags a:hover, .terms-tags a:hover {
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+}
+
+/* ---- 正文：MD3 body-large ---- */
+.md-content {
+    color: var(--md-on-surface);
+    line-height: 1.85;
+    letter-spacing: 0.015em;
+}
+.md-content h2 {
+    margin-top: 2.2em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--md-outline-variant);
+}
+.md-content h3 {
+    margin-top: 1.8em;
+}
+.md-content strong {
+    font-weight: 700;
+    color: var(--md-on-surface);
+}
+
+/* ---- 引用块 ---- */
+.md-content blockquote {
+    background: var(--md-surface-container);
+    border-left: 4px solid var(--md-tertiary);
+    border-radius: var(--md-shape-md);
+    padding: 1em 1.2em;
+    color: var(--md-on-surface-variant);
+    margin: 1.2em 0;
+}
+
+/* ---- 表格：MD3 数据表 ---- */
+.md-content table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-md);
+    overflow: hidden;
+    width: 100%;
+}
+.md-content th {
+    background: var(--md-surface-container-high);
+    color: var(--md-on-surface);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+.md-content th, .md-content td {
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--md-outline-variant);
+}
+.md-content tr:last-child td {
+    border-bottom: none;
+}
+.md-content tbody tr:hover {
+    background: var(--md-surface-container);
+}
+
+/* ---- 代码：MD3 代码容器 ---- */
+.md-content code {
+    background: var(--md-surface-container-high);
+    border-radius: var(--md-shape-xs);
+    padding: 2px 7px;
+    font-size: 0.86em;
+    color: var(--md-on-surface);
+}
+.highlight pre {
+    background: var(--md-surface-container) !important;
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-md);
+    padding: 1em 1.2em;
+}
+.highlight {
+    background: transparent;
+    border-radius: var(--md-shape-md);
+}
+.copy-code {
+    border-radius: var(--md-shape-full);
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    border: none;
+    opacity: 0.9;
+}
+.copy-code:hover {
+    opacity: 1;
+}
+
+/* ---- 翻页 / 分页：MD3 文本按钮 ---- */
+.paginav {
+    background: var(--md-surface-container-low);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-md);
+    box-shadow: var(--md-elevation-1);
+}
+.paginav-next, .paginav-prev {
+    border-radius: var(--md-shape-full);
+    padding: 8px 16px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+.paginav a:hover {
+    background: var(--md-secondary-container);
+    color: var(--md-on-secondary-container);
+}
+
+/* ---- 搜索结果 ---- */
+.searchResults li a {
+    border-radius: var(--md-shape-sm);
+    padding: 8px 12px;
+    color: var(--md-on-surface);
+}
+.searchResults li a:hover, .searchResults li a:focus {
+    background: var(--md-secondary-container);
+    color: var(--md-on-secondary-container);
+}
+.searchbox {
+    border: 1px solid var(--md-outline);
+    border-radius: var(--md-shape-full);
+    background: var(--md-surface-container-high);
+    padding: 10px 20px;
+}
+.searchbox:focus {
+    outline: 2px solid var(--md-primary);
+    border-color: transparent;
+}
+
+/* ---- 目录 TOC ---- */
+.toc {
+    background: var(--md-surface-container-low);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-md);
+    padding: 0.6em 1em;
+}
+.toc details summary {
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--md-on-surface);
+}
+.toc a {
+    color: var(--md-on-surface-variant);
+}
+.toc a:hover {
+    color: var(--md-primary);
+}
+
+/* ---- 回顶按钮：MD3 FAB ---- */
+.top-link {
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+    border-radius: var(--md-shape-full);
+    width: 48px;
+    height: 48px;
+    box-shadow: var(--md-elevation-3);
+    transition: box-shadow 0.2s var(--md-motion-emphasized),
+        transform 0.2s var(--md-motion-emphasized);
+}
+.top-link:hover {
+    box-shadow: var(--md-elevation-3);
+    transform: translateY(-2px);
+}
+
+/* ---- 面包屑 / 归档 ---- */
+.breadcrumbs {
+    color: var(--md-on-surface-variant);
+    font-size: 0.85em;
+    letter-spacing: 0.03em;
+}
+.archive-year, .archive-month {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+.archive-info a, .entry-link a {
+    border-radius: var(--md-shape-xs);
+}
+
+/* ---- 首页 Profile ---- */
+.home-info {
+    background: var(--md-surface-container);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-lg);
+    box-shadow: var(--md-elevation-1);
+}
+.home-info .entry-content {
+    color: var(--md-on-surface-variant);
+    letter-spacing: 0.03em;
+}
+
+/* ---- 页脚 / 社交图标 ---- */
+.footer {
+    color: var(--md-on-surface-variant);
+}
+.social-icons a {
+    border-radius: var(--md-shape-full);
+    color: var(--md-on-surface-variant);
+}
+.social-icons a:hover {
+    background: var(--md-secondary-container);
+    color: var(--md-on-secondary-container);
+}
+
+/* ---- 分享按钮 ---- */
+.share-buttons a {
+    background: var(--md-surface-container-high);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-sm);
+    padding: 8px 14px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+.share-buttons a:hover {
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+}
