@@ -1,0 +1,66 @@
+/* ===== 导航栏搜索（弹出控件：允许轻阴影） ===== */
+.nav-search {
+    position: relative;
+    margin-left: var(--gap);
+    flex-shrink: 0;
+}
+.nav-search-input {
+    width: 130px;
+    padding: 6px 14px;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--md-on-surface);
+    background: var(--md-surface-container-high);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-full);
+    transition: width 0.25s var(--md-motion-emphasized),
+        background-color 0.25s var(--md-motion-emphasized),
+        border-color 0.25s var(--md-motion-emphasized);
+}
+.nav-search-input:focus {
+    width: 240px;
+    outline: none;
+    border-color: var(--md-primary);
+    background: var(--md-surface);
+}
+.nav-search-results {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    width: 320px;
+    max-height: 60vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: var(--md-surface-container);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-md);
+    box-shadow: var(--md-elevation-2);
+    z-index: 100;
+}
+.nav-search-results li a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: var(--md-shape-sm);
+    color: var(--md-on-surface);
+}
+.nav-search-results li a:hover {
+    background: var(--md-secondary-container);
+    color: var(--md-on-secondary-container);
+}
+.nav-search-results .r-title {
+    display: block;
+    font-weight: 500;
+}
+.nav-search-results .r-sum {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--md-on-surface-variant);
+}
+@media (max-width: 800px) {
+    .nav-search {
+        display: none;
+    }
+}

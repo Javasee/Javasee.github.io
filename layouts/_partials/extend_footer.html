@@ -1,0 +1,69 @@
+{{- /* 导航栏搜索：输入框 + 即时结果下拉（替代独立搜索页） */ -}}
+<script>
+(function () {
+    var menu = document.getElementById('menu');
+    if (!menu || document.querySelector('.nav-search')) return;
+
+    var wrap = document.createElement('div');
+    wrap.className = 'nav-search';
+    var input = document.createElement('input');
+    input.type = 'search';
+    input.className = 'nav-search-input';
+    input.placeholder = '搜索…';
+    input.setAttribute('aria-label', '站内搜索');
+    var list = document.createElement('ul');
+    list.className = 'nav-search-results';
+    list.hidden = true;
+    wrap.appendChild(input);
+    wrap.appendChild(list);
+    menu.insertAdjacentElement('afterend', wrap);
+
+    var index = null;
+    function loadIndex() {
+        if (index) return Promise.resolve(index);
+        return fetch('{{ "index.json" | relURL }}').then(function (r) { return r.json(); })
+            .then(function (data) { index = data; return data; });
+    }
+
+    function esc(s) {
+        var d = document.createElement('div');
+        d.textContent = s || '';
+        return d.innerHTML;
+    }
+
+    function render(items) {
+        list.innerHTML = items.map(function (it) {
+            return '<li><a href="' + it.permalink + '"><span class="r-title">' + esc(it.title) +
+                '</span><span class="r-sum">' + esc((it.summary || '').replace(/<[^>]+>/g, '').slice(0, 64)) +
+                '</span></a></li>';
+        }).join('');
+        list.hidden = items.length === 0;
+    }
+
+    input.addEventListener('focus', loadIndex);
+    input.addEventListener('input', function () {
+        var q = input.value.trim().toLowerCase();
+        if (!q) { list.hidden = true; return; }
+        loadIndex().then(function (data) {
+            var hits = data.filter(function (it) {
+                return ((it.title || '') + ' ' + (it.summary || '') + ' ' + (it.content || ''))
+                    .toLowerCase().indexOf(q) !== -1;
+            }).slice(0, 6);
+            render(hits);
+        });
+    });
+    input.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { input.value = ''; list.hidden = true; input.blur(); }
+        if (e.key === 'Enter') {
+            var a = list.querySelector('a');
+            if (a) { location.href = a.href; }
+        }
+    });
+    document.addEventListener('click', function (e) {
+        if (!wrap.contains(e.target)) list.hidden = true;
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.altKey && e.key === '/') { e.preventDefault(); input.focus(); }
+    });
+})();
+</script>

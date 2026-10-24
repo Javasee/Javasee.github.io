@@ -23,6 +23,7 @@ buildFuture = false
   ShowToc = true
   TocOpen = false
   ShowRssButtonInSectionTermList = true
+  dateFormat = "Jan 2, 2006"
 
 [[params.socialIcons]]
   name = "github"
@@ -53,11 +54,6 @@ buildFuture = false
     name = "标签"
     url = "/tags/"
     weight = 40
-  [[menu.main]]
-    identifier = "search"
-    name = "搜索"
-    url = "/search/"
-    weight = 50
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

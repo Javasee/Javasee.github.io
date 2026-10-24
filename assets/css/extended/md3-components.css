@@ -34,11 +34,11 @@
 .header .menu li a:focus-visible::after {
     width: 12px;
 }
-.header .menu li a.active {
+.header .menu li a .active {
     color: var(--md-primary);
     text-decoration: none;
 }
-.header .menu li a.active::after {
+.header .menu li a:has(.active)::after {
     width: 100%;
 }
 .logo {
@@ -146,8 +146,11 @@ a {
     margin: 1.2em 0;
 }
 
-/* ---- 表格：MD3 数据表 ---- */
+/* ---- 表格：MD3 数据表 ----
+   display:table 是必须的：主题 reset.css 把 table 归入 display:block 组，
+   width:100% 后盒子比表格网格宽，右侧会出现幻影空列 */
 .md-content table {
+    display: table;
     border-collapse: separate;
     border-spacing: 0;
     border: 1px solid var(--md-outline-variant);
@@ -220,26 +223,7 @@ a {
     color: var(--md-on-secondary-container);
 }
 
-/* ---- 搜索结果 ---- */
-.searchResults li a {
-    border-radius: var(--md-shape-sm);
-    padding: 8px 12px;
-    color: var(--md-on-surface);
-}
-.searchResults li a:hover, .searchResults li a:focus {
-    background: var(--md-secondary-container);
-    color: var(--md-on-secondary-container);
-}
-.searchbox {
-    border: 1px solid var(--md-outline);
-    border-radius: var(--md-shape-full);
-    background: var(--md-surface-container-high);
-    padding: 10px 20px;
-}
-.searchbox:focus {
-    outline: 2px solid var(--md-primary);
-    border-color: transparent;
-}
+/* ---- 搜索：已迁移至导航栏（见 md3-search.css） ---- */
 
 /* ---- 目录 TOC ---- */
 .toc {
