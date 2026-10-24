@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="300" viewBox="0 0 800 300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c9ee8"/>
+      <stop offset="100%" stop-color="#b48ee8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="300" fill="url(#bg)"/>
+  <circle cx="650" cy="80" r="45" fill="#ffffff" opacity="0.35"/>
+  <circle cx="120" cy="230" r="70" fill="#ffffff" opacity="0.18"/>
+  <text x="400" y="155" font-family="sans-serif" font-size="42" fill="#ffffff" text-anchor="middle">Hello, Blog! (◕‿◕)</text>
+  <text x="400" y="205" font-family="sans-serif" font-size="22" fill="#f2f2f2" text-anchor="middle">一张示例图片 · 以后你的图片也这样放</text>
+</svg>
