@@ -3,18 +3,18 @@
     position: relative;
     margin-left: var(--gap);
     flex-shrink: 0;
-    align-self: stretch;
     display: flex;
+    align-self: center;
 }
 .nav-search-input {
     width: 130px;
-    /* 输入盒 = tab 锚盒（随 .nav-search 拉伸等高）；底线 2px 落在盒底
-       [−6,−4] 带，与 tab 下划线（span 下 2..4px = 盒底 −6..−4）完全重合 */
+    /* 输入盒总高 = tab 锚盒总高（内容盒+16），同高同中心 →
+       底线 2px 带 [−6,−4] 与 tab 下划线带（盒底 −6..−4）精确重合 */
     box-sizing: border-box;
     font-family: inherit;
     font-size: 16px;
     line-height: normal;
-    padding: 8px 4px 4px;
+    padding: 8px 4px 6px;
     color: var(--md-on-surface);
     background: transparent;
     border: none;
