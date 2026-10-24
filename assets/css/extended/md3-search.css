@@ -3,11 +3,14 @@
     position: relative;
     margin-left: var(--gap);
     flex-shrink: 0;
+    align-self: stretch;
+    display: flex;
 }
 .nav-search-input {
     width: 130px;
-    /* 与 tab 完全同构：同字号/同上边距，底线 padding-bottom:4px 精确落在
-       tab 下划线的同一相对位置（tab 线在盒底 -6..-4 带） */
+    /* 输入盒 = tab 锚盒（随 .nav-search 拉伸等高）；底线 2px 落在盒底
+       [−6,−4] 带，与 tab 下划线（span 下 2..4px = 盒底 −6..−4）完全重合 */
+    box-sizing: border-box;
     font-family: inherit;
     font-size: 16px;
     line-height: normal;
