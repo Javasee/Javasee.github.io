@@ -8,6 +8,8 @@
     width: 130px;
     line-height: 1;
     padding: 6px 4px 3px;
+    position: relative;
+    top: 2px;
     font-family: inherit;
     font-size: 14px;
     color: var(--md-on-surface);
