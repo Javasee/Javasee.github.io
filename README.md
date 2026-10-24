@@ -21,6 +21,16 @@ git push
 
 GitHub Actions 会自动构建并发布（约 1 分钟）。
 
+## 版本回退
+
+每次批量改动前会打一个快照 tag（`snapshot-*`），旧版本永远保留：
+
+```bash
+git tag                       # 查看所有快照
+git reset --hard snapshot-pre-20261026-changes   # 整体回退到某快照
+git revert <commit-id>        # 或只撤销某一次提交
+```
+
 ## 本地预览
 
 ```bash
