@@ -23,6 +23,7 @@ buildFuture = false
   ShowToc = true
   TocOpen = false
   ShowRssButtonInSectionTermList = true
+  dateFormat = "2006-01-02"
 
 [[params.socialIcons]]
   name = "github"
