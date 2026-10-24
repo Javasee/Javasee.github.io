@@ -15,11 +15,15 @@
     font-weight: 500;
     letter-spacing: 0.02em;
 }
-.header .menu li a::after {
+/* 下划线挂在 span 内联盒上（= 字体轮廓盒），中英文都稳定贴文字下缘 */
+.header .menu li a span {
+    position: relative;
+}
+.header .menu li a span::after {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: 5px;
+    bottom: -3px;
     height: 2px;
     width: 0;
     background: var(--md-primary);
@@ -30,15 +34,15 @@
 .header .menu li a:focus-visible {
     color: var(--md-on-surface);
 }
-.header .menu li a:hover::after,
-.header .menu li a:focus-visible::after {
+.header .menu li a:hover span::after,
+.header .menu li a:focus-visible span::after {
     width: 12px;
 }
 .header .menu li a .active {
     color: var(--md-primary);
     text-decoration: none;
 }
-.header .menu li a:has(.active)::after {
+.header .menu li a .active::after {
     width: 100%;
 }
 .logo {
@@ -99,6 +103,19 @@ a {
     color: var(--md-on-surface-variant);
     font-size: 0.875em;
     letter-spacing: 0.025em;
+}
+/* meta 各部分（日期 · 阅读时间 · 字数）之间的间距 */
+.post-meta span,
+.entry-footer span {
+    margin-inline: 6px;
+}
+.post-meta span:first-child,
+.entry-footer span:first-child {
+    margin-inline-start: 0;
+}
+.post-meta span:last-child,
+.entry-footer span:last-child {
+    margin-inline-end: 0;
 }
 
 /* ---- 标签：MD3 胶囊 Chip ---- */
