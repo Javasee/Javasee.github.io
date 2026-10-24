@@ -12,9 +12,9 @@
        与 tab 下划线带精确重合）；pt−pb=2 保证文字中心与 tab 文字对齐 */
     box-sizing: border-box;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 15px;
     line-height: normal;
-    padding: 4px 4px 2px;
+    padding: 4px 4px 3px;
     color: var(--md-on-surface);
     background: transparent;
     border: none;
