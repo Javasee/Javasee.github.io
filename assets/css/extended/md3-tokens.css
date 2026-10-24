@@ -93,9 +93,9 @@
 }
 
 /* ===== 排版：MD3 中文适配 =====
-   Roboto（拉丁，自托管）→ 思源黑体/雅黑（中文，系统字体） */
+   Google Sans Flex（拉丁/数字，可变字重）→ 思源黑体（中文） */
 :root {
-    --md-font-sans: 'Roboto', 'Noto Sans SC', 'Microsoft YaHei UI',
+    --md-font-sans: 'Google Sans Flex', 'Noto Sans SC', 'Microsoft YaHei UI',
         'Microsoft YaHei', 'PingFang SC', sans-serif;
     --md-font-mono: 'Roboto Mono', 'Cascadia Code', Consolas,
         'Microsoft YaHei UI', monospace;

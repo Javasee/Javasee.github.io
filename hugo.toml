@@ -24,10 +24,6 @@ buildFuture = false
   TocOpen = false
   ShowRssButtonInSectionTermList = true
 
-[params.homeInfoParams]
-  Title = "Javasee's Blog"
-  Content = "随笔 · 工程复盘 · 记录与思考"
-
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/Javasee"

@@ -1,22 +1,33 @@
 /* ===== Material 3 · 自托管字体（零外部依赖） ===== */
+
+/* Google Sans Flex —— 英文 / 数字（可变字重轴，50KB） */
 @font-face {
-    font-family: 'Roboto';
+    font-family: 'Google Sans Flex';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/google-sans-flex-latin-wght-normal.woff2') format('woff2-variations');
+}
+
+/* 思源黑体 Noto Sans SC —— 中文（简中子集，每字重约 1.1MB） */
+@font-face {
+    font-family: 'Noto Sans SC';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('/fonts/roboto-latin-400-normal.woff2') format('woff2');
+    src: url('/fonts/noto-sans-sc-chinese-simplified-400-normal.woff2') format('woff2');
 }
 @font-face {
-    font-family: 'Roboto';
+    font-family: 'Noto Sans SC';
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url('/fonts/roboto-latin-500-normal.woff2') format('woff2');
+    src: url('/fonts/noto-sans-sc-chinese-simplified-500-normal.woff2') format('woff2');
 }
 @font-face {
-    font-family: 'Roboto';
+    font-family: 'Noto Sans SC';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('/fonts/roboto-latin-700-normal.woff2') format('woff2');
+    src: url('/fonts/noto-sans-sc-chinese-simplified-700-normal.woff2') format('woff2');
 }
