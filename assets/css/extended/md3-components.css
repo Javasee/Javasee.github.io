@@ -175,7 +175,13 @@ a {
     background: var(--md-surface-container);
 }
 
-/* ---- 代码：MD3 代码容器 ---- */
+/* ---- 代码：MD3 代码容器 ----
+   颜色必须显式覆盖：主题 .md-content pre code 写死 rgb(213,213,214) 浅灰，
+   无类名的纯文字/括号 token 继承它，浅色模式下不可读 */
+.md-content .highlight pre code,
+.md-content pre code {
+    color: var(--md-on-surface);
+}
 .md-content code {
     background: var(--md-surface-container-high);
     border-radius: var(--md-shape-xs);
