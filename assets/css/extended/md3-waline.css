@@ -116,6 +116,13 @@
     color: var(--md-primary);
 }
 
+/* ---- 评论卡右上角：点赞/回复按钮间距 ---- */
+[data-waline] .wl-card .wl-comment-actions {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
 /* ---- 加载超时提示 ---- */
 .waline-timeout {
     display: flex;
