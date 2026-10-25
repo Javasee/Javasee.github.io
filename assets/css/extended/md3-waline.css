@@ -107,8 +107,8 @@
 [data-waline] .wl-action {
     color: var(--md-on-surface-variant);
 }
-[data-waline] .wl-action svg,
-[data-waline] .wl-action svg * {
+[data-waline] .wl-action:not(.wl-emoji-native) svg,
+[data-waline] .wl-action:not(.wl-emoji-native) svg * {
     fill: currentColor;
 }
 [data-waline] .wl-action:hover,

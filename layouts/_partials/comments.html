@@ -70,7 +70,7 @@
 
     btn.addEventListener('click', () => pop.classList.toggle('display'));
     document.addEventListener('click', (e) => {
-      if (!pop.contains(e.target) && e.target !== btn) pop.classList.remove('display');
+      if (!pop.contains(e.target) && !btn.contains(e.target)) pop.classList.remove('display');
     });
 
     actions.prepend(btn);
