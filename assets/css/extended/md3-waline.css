@@ -1,0 +1,40 @@
+/* ===== Waline 评论区 · MD3 适配 ===== */
+:root {
+    --waline-font-size: 0.94em;
+    --waline-theme-color: var(--md-primary);
+    --waline-active-color: var(--md-primary);
+    --waline-color: var(--md-on-surface);
+    --waline-bg-color: var(--md-surface-container-low);
+    --waline-bg-color-light: var(--md-surface-container);
+    --waline-bg-color-hover: var(--md-surface-container);
+    --waline-border-color: var(--md-outline-variant);
+    --waline-disable-bg-color: var(--md-surface-container-high);
+    --waline-disable-color: var(--md-on-surface-variant);
+    --waline-code-bg-color: var(--md-surface-container-high);
+    --waline-bq-color: var(--md-on-surface-variant);
+    --waline-info-bg-color: var(--md-surface-container);
+    --waline-info-color: var(--md-on-surface-variant);
+    --waline-box-shadow: none;
+    --waline-avatar-radius: var(--md-shape-full);
+}
+
+.waline-comment {
+    margin-top: 2em;
+    padding-top: 1.2em;
+    border-top: 1px solid var(--md-outline-variant);
+}
+
+/* 输入框 / 按钮贴 MD3 形状 */
+.waline-comment .wl-editor,
+.waline-comment .wl-textarea,
+.waline-comment .wl-input {
+    border-radius: var(--md-shape-sm);
+}
+.waline-comment .wl-btn {
+    border-radius: var(--md-shape-full);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+.waline-comment .wl-meta-icon {
+    border-radius: var(--md-shape-xs);
+}

@@ -1,0 +1,15 @@
+{{- /* Waline 评论区（匿名 + 登录），服务端：Vercel + GitHub 存储 */ -}}
+<link rel="stylesheet" href="{{ "waline/waline.css" | relURL }}">
+<div id="waline-comment" class="waline-comment"></div>
+<script type="module">
+  import { init } from '{{ "waline/waline.js" | relURL }}';
+  init({
+    el: '#waline-comment',
+    serverURL: 'https://waline-server-javasee.vercel.app',
+    path: location.pathname,
+    lang: 'zh-CN',
+    dark: 'html[data-theme="dark"]',
+    requiredMeta: ['nick', 'mail'],
+    login: 'enable',
+  });
+</script>

@@ -23,6 +23,7 @@ buildFuture = false
   ShowToc = true
   TocOpen = false
   ShowRssButtonInSectionTermList = true
+  comments = true
   dateFormat = "Jan 2, 2006"
 
 [[params.socialIcons]]
