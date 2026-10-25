@@ -1,4 +1,4 @@
-baseURL = "https://javasee.github.io/"
+baseURL = "https://javasee.com/"
 title = "Javasee's Blog"
 theme = "PaperMod"
 locale = "zh-cn"
