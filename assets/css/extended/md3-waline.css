@@ -1,5 +1,8 @@
-/* ===== Waline 评论区 · MD3 适配 ===== */
-:root {
+/* ===== Waline 评论区 · MD3 适配 =====
+   注意：waline.css 以 <link> 在 body 内加载，其 :root 默认值晚于主题样式表，
+   所以 --waline-* 变量必须定义在 [data-waline] 元素级（元素声明压过继承），
+   字体必须显式指定（input/textarea/button 不继承页面字体）。 */
+[data-waline] {
     --waline-font-size: 0.94em;
     --waline-theme-color: var(--md-primary);
     --waline-active-color: var(--md-primary);
@@ -11,11 +14,36 @@
     --waline-disable-bg-color: var(--md-surface-container-high);
     --waline-disable-color: var(--md-on-surface-variant);
     --waline-code-bg-color: var(--md-surface-container-high);
-    --waline-bq-color: var(--md-on-surface-variant);
+    --waline-bq-color: var(--md-outline-variant);
     --waline-info-bg-color: var(--md-surface-container);
     --waline-info-color: var(--md-on-surface-variant);
+    --waline-light-grey: var(--md-on-surface-variant);
+    --waline-dark-grey: var(--md-on-surface);
+    --waline-warning-color: var(--md-error);
+    --waline-badge-color: var(--md-tertiary);
     --waline-box-shadow: none;
     --waline-avatar-radius: var(--md-shape-full);
+}
+
+/* ---- 字体：字形与字重与全站一致 ---- */
+[data-waline],
+[data-waline] input,
+[data-waline] textarea,
+[data-waline] button {
+    font-family: var(--md-font-sans);
+}
+[data-waline] button,
+[data-waline] .wl-btn {
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+[data-waline] .wl-card .wl-head .wl-nick {
+    font-weight: 500;
+}
+[data-waline] .wl-header label,
+[data-waline] .wl-header input,
+[data-waline] .wl-input {
+    font-size: 0.875em;
 }
 
 .waline-comment {
@@ -24,17 +52,42 @@
     border-top: 1px solid var(--md-outline-variant);
 }
 
-/* 输入框 / 按钮贴 MD3 形状 */
-.waline-comment .wl-editor,
-.waline-comment .wl-textarea,
-.waline-comment .wl-input {
+/* ---- 隐藏：订阅本文/本站（RSS 图标）、预览按钮 ---- */
+[data-waline] .wl-rss,
+[data-waline] .wl-action[title="预览"] {
+    display: none !important;
+}
+
+/* ---- 排序：正序/倒序合并为单一开关 ----
+   隐藏当前选中项，剩下的那个就是"切换到另一状态"的按钮 */
+[data-waline] .wl-sort li.active {
+    display: none;
+}
+[data-waline] .wl-sort li {
+    padding: 2px 10px;
+    border-radius: var(--md-shape-full);
+    color: var(--md-primary);
+    font-weight: 500;
+    font-size: 0.8em;
+}
+[data-waline] .wl-sort li:hover {
+    background: var(--md-secondary-container);
+    color: var(--md-on-secondary-container);
+}
+
+/* ---- 写评论：输入框（初始两行、禁拖拽、随文本自动增高） ---- */
+[data-waline] .wl-editor {
+    resize: none !important;
+    min-height: 3.5em;
+    border-radius: var(--md-shape-sm);
+    line-height: 1.75;
+}
+[data-waline] .wl-input {
     border-radius: var(--md-shape-sm);
 }
-.waline-comment .wl-btn {
-    border-radius: var(--md-shape-full);
-    font-weight: 500;
-    letter-spacing: 0.03em;
+[data-waline] .wl-panel {
+    border-radius: var(--md-shape-md);
 }
-.waline-comment .wl-meta-icon {
-    border-radius: var(--md-shape-xs);
+[data-waline] .wl-btn {
+    border-radius: var(--md-shape-full);
 }

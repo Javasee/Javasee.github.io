@@ -9,7 +9,31 @@
     path: location.pathname,
     lang: 'zh-CN',
     dark: 'html[data-theme="dark"]',
-    requiredMeta: ['nick', 'mail'],
+    meta: ['nick', 'mail'],
+    requiredMeta: ['nick'],
     login: 'enable',
   });
+
+  /* 输入框自动增高：高度始终 = 已输入文本 + 一行 */
+  const lineHeight = (el) => parseFloat(getComputedStyle(el).lineHeight) || 24;
+  const grow = (el) => {
+    el.style.height = 'auto';
+    el.style.height = (el.scrollHeight + lineHeight(el)) + 'px';
+  };
+  const wire = (el) => {
+    if (el.dataset.grown) return;
+    el.dataset.grown = '1';
+    grow(el);
+    el.addEventListener('input', () => grow(el));
+    /* 点击插入表情等不触发 input 的场景 */
+    document.addEventListener('click', () => setTimeout(() => grow(el), 0), true);
+  };
+  /* 等待编辑器渲染完成（waline 异步挂载） */
+  let tries = 0;
+  const boot = () => {
+    const ta = document.querySelector('.wl-editor');
+    if (ta) return wire(ta);
+    if (tries++ < 100) setTimeout(boot, 200);
+  };
+  boot();
 </script>
