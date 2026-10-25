@@ -13,6 +13,7 @@
     requiredMeta: ['nick'],
     login: 'enable',
     noRss: true,
+    locale: { nickError: '请填写昵称' },
   });
 
   /* ===== 输入框：随文本自动增高（高度 = 文本 + 一行） ===== */
@@ -46,7 +47,7 @@
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'wl-action wl-emoji-native';
-    btn.title = '表情';
+    btn.title = '插入表情';
     btn.textContent = '☺';
 
     const pop = document.createElement('div');
