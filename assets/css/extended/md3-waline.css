@@ -88,8 +88,8 @@
 [data-waline] .wl-editor {
     resize: none !important;
     min-height: 3.5em;
-    margin: 0.5em calc(0.5em + 10px);
-    width: calc(100% - 1em - 20px);
+    margin: 0.5em calc(0.5em + 9px);
+    width: calc(100% - 1em - 18px);
     border-radius: var(--md-shape-sm);
     line-height: 1.75;
 }
@@ -118,12 +118,19 @@
 
 /* ---- 原生 emoji 表情选择器 ---- */
 [data-waline] .wl-emoji-native {
-    font-size: 1.1em;
     line-height: 1;
+}
+[data-waline] .wl-emoji-native svg {
+    display: block;
+}
+/* 图片上传：不允许附图 */
+[data-waline] .wl-actions label[for="wl-image-upload"] {
+    display: none !important;
 }
 .wl-emoji-native-pop {
     position: absolute;
-    bottom: 2.4em;
+    top: 2.2em;
+    bottom: auto;
     inset-inline-start: 0;
     z-index: 20;
     display: none;

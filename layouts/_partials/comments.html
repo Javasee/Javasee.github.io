@@ -14,6 +14,7 @@
     login: 'enable',
     noRss: true,
     locale: { nickError: '请填写昵称' },
+    imageUploader: async () => '',
   });
 
   /* ===== 输入框：随文本自动增高（高度 = 文本 + 一行） ===== */
@@ -48,7 +49,7 @@
     btn.type = 'button';
     btn.className = 'wl-action wl-emoji-native';
     btn.title = '插入表情';
-    btn.textContent = '☺';
+    btn.innerHTML = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="8.8" cy="10" r="1.15" fill="currentColor" stroke="none"/><circle cx="15.2" cy="10" r="1.15" fill="currentColor" stroke="none"/><path d="M10.2 14.6q1.8 1.3 3.6 0"/></svg>';
 
     const pop = document.createElement('div');
     pop.className = 'wl-emoji-native-pop';
@@ -72,7 +73,7 @@
       if (!pop.contains(e.target) && e.target !== btn) pop.classList.remove('display');
     });
 
-    actions.appendChild(btn);
+    actions.prepend(btn);
     actions.appendChild(pop);
     wire(ta);
   };
