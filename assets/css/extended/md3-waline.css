@@ -52,14 +52,15 @@
     border-top: 1px solid var(--md-outline-variant);
 }
 
-/* ---- 隐藏：订阅本文/本站（RSS 图标）、预览按钮 ---- */
+/* ---- 隐藏：订阅 RSS、预览按钮、Markdown 帮助、自带图片表情按钮 ---- */
 [data-waline] .wl-rss,
-[data-waline] .wl-action[title="预览"] {
+[data-waline] .wl-action[title="预览"],
+[data-waline] .wl-action[title="Markdown Guide"],
+[data-waline] .wl-action[title="表情"] {
     display: none !important;
 }
 
-/* ---- 排序：正序/倒序合并为单一开关 ----
-   隐藏当前选中项，剩下的那个就是"切换到另一状态"的按钮 */
+/* ---- 排序：正序/倒序合并为单一开关 ---- */
 [data-waline] .wl-sort li.active {
     display: none;
 }
@@ -75,10 +76,20 @@
     color: var(--md-on-secondary-container);
 }
 
-/* ---- 写评论：输入框（初始两行、禁拖拽、随文本自动增高） ---- */
+/* ---- 昵称/邮箱一行：行高收紧 ---- */
+[data-waline] .wl-header label {
+    padding: 0.5em 0.5em;
+}
+[data-waline] .wl-header input {
+    padding: 0.35em 0.5em;
+}
+
+/* ---- 写评论：输入框 ---- */
 [data-waline] .wl-editor {
     resize: none !important;
     min-height: 3.5em;
+    margin: 0.5em calc(0.5em + 12px);
+    width: calc(100% - 1em - 24px);
     border-radius: var(--md-shape-sm);
     line-height: 1.75;
 }
@@ -90,4 +101,55 @@
 }
 [data-waline] .wl-btn {
     border-radius: var(--md-shape-full);
+}
+
+/* ---- 工具栏按钮：MD3 配色 ---- */
+[data-waline] .wl-action {
+    color: var(--md-on-surface-variant);
+}
+[data-waline] .wl-action svg,
+[data-waline] .wl-action svg * {
+    fill: currentColor;
+}
+[data-waline] .wl-action:hover,
+[data-waline] .wl-action.active {
+    color: var(--md-primary);
+}
+
+/* ---- 原生 emoji 表情选择器 ---- */
+[data-waline] .wl-emoji-native {
+    font-size: 1.1em;
+    line-height: 1;
+}
+.wl-emoji-native-pop {
+    position: absolute;
+    bottom: 2.4em;
+    inset-inline-start: 0;
+    z-index: 20;
+    display: none;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 2px;
+    max-width: 340px;
+    padding: 8px;
+    background: var(--md-surface-container);
+    border: 1px solid var(--md-outline-variant);
+    border-radius: var(--md-shape-md);
+    box-shadow: var(--md-elevation-2);
+}
+.wl-emoji-native-pop.display {
+    display: grid;
+}
+.wl-emoji-native-pop button {
+    width: 2em;
+    height: 2em;
+    padding: 0;
+    border: none;
+    border-radius: var(--md-shape-sm);
+    background: transparent;
+    font-size: 1.05em;
+    line-height: 1;
+    cursor: pointer;
+}
+.wl-emoji-native-pop button:hover {
+    background: var(--md-secondary-container);
 }

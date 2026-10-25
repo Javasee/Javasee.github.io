@@ -12,9 +12,10 @@
     meta: ['nick', 'mail'],
     requiredMeta: ['nick'],
     login: 'enable',
+    noRss: true,
   });
 
-  /* 输入框自动增高：高度始终 = 已输入文本 + 一行 */
+  /* ===== 输入框：随文本自动增高（高度 = 文本 + 一行） ===== */
   const lineHeight = (el) => parseFloat(getComputedStyle(el).lineHeight) || 24;
   const grow = (el) => {
     el.style.height = 'auto';
@@ -23,17 +24,62 @@
   const wire = (el) => {
     if (el.dataset.grown) return;
     el.dataset.grown = '1';
-    grow(el);
     el.addEventListener('input', () => grow(el));
-    /* 点击插入表情等不触发 input 的场景 */
     document.addEventListener('click', () => setTimeout(() => grow(el), 0), true);
   };
-  /* 等待编辑器渲染完成（waline 异步挂载） */
+
+  /* ===== 原生 emoji 表情选择器（MD3 风格，替代图片表情包） ===== */
+  const EMOJIS = (
+    '😀 😁 😂 🤣 😊 😍 😘 😋 🤔 🤨 😐 😅 😢 😭 😡 😤 ' +
+    '😱 🥳 😎 🤗 😏 😌 🙃 😉 😜 🤪 🧐 🥺 😩 🤯 😴 🤢 ' +
+    '👍 👎 👏 🙏 💪 🤝 👋 ✌️ 🤞 👌 ❤️ 🧡 💛 💚 💙 💜 ' +
+    '🔥 ✨ ⭐ 🎉 🎊 🎈 💡 ✅ ❌ ⚠️ 📌 📝 📷 🎧 💻 🚀'
+  ).split(' ').filter(Boolean);
+
+  const pickers = new WeakSet();
+  const buildPicker = () => {
+    const actions = document.querySelector('[data-waline] .wl-actions');
+    const ta = document.querySelector('.wl-editor');
+    if (!actions || !ta || pickers.has(actions)) return;
+    pickers.add(actions);
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'wl-action wl-emoji-native';
+    btn.title = '表情';
+    btn.textContent = '☺';
+
+    const pop = document.createElement('div');
+    pop.className = 'wl-emoji-native-pop';
+    EMOJIS.forEach((ch) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = ch;
+      b.addEventListener('mousedown', (e) => e.preventDefault());
+      b.addEventListener('click', () => {
+        const s = ta.selectionStart, t = ta.selectionEnd;
+        ta.value = ta.value.slice(0, s) + ch + ta.value.slice(t);
+        ta.selectionStart = ta.selectionEnd = s + ch.length;
+        ta.dispatchEvent(new Event('input', { bubbles: true }));
+        ta.focus();
+      });
+      pop.appendChild(b);
+    });
+
+    btn.addEventListener('click', () => pop.classList.toggle('display'));
+    document.addEventListener('click', (e) => {
+      if (!pop.contains(e.target) && e.target !== btn) pop.classList.remove('display');
+    });
+
+    actions.appendChild(btn);
+    actions.appendChild(pop);
+    wire(ta);
+  };
+
   let tries = 0;
   const boot = () => {
-    const ta = document.querySelector('.wl-editor');
-    if (ta) return wire(ta);
-    if (tries++ < 100) setTimeout(boot, 200);
+    buildPicker();
+    if (!document.querySelector('.wl-emoji-native') && tries++ < 100) setTimeout(boot, 200);
   };
   boot();
 </script>
