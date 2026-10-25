@@ -78,6 +78,23 @@
     wire(ta);
   };
 
+  /* ===== 加载看门狗：网络不通时给出提示与重试 ===== */
+  setTimeout(() => {
+    const root = document.querySelector('.waline-comment');
+    if (!root || root.querySelector('.wl-panel') || root.querySelector('.waline-timeout')) return;
+    const tip = document.createElement('div');
+    tip.className = 'waline-timeout';
+    const span = document.createElement('span');
+    span.textContent = '评论加载超时（当前网络不稳定）';
+    const retry = document.createElement('button');
+    retry.type = 'button';
+    retry.textContent = '重试';
+    retry.addEventListener('click', () => location.reload());
+    tip.appendChild(span);
+    tip.appendChild(retry);
+    root.appendChild(tip);
+  }, 8000);
+
   let tries = 0;
   const boot = () => {
     buildPicker();
