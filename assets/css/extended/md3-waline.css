@@ -122,7 +122,7 @@
     align-items: center;
     gap: 11px;
     position: relative;
-    top: 1px;
+    top: 2px;
 }
 
 /* ---- 加载超时提示 ---- */
