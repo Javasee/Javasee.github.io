@@ -1,5 +1,5 @@
 ---
-title: "复盘：个人博客搭建（GitHub Pages + Hugo）"
+title: "个人博客搭建（GitHub Pages + Hugo）"
 date: 2026-10-24T13:00:00+08:00
 draft: false
 ai_generated: "mimo-v2.6-pro"

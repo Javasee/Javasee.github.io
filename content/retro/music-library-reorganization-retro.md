@@ -1,5 +1,5 @@
 ---
-title: "复盘：三块盘、18GB 音乐库整理——一次「精选辑」误换的教训"
+title: "三块盘、18GB 音乐库整理——一次「精选辑」误换的教训"
 date: 2026-10-24T20:00:00+08:00
 draft: false
 ai_generated: "mimo-v2.6-flash"
