@@ -1,9 +1,5 @@
 {{- $meta := slice }}
 
-{{- if .Params.ai_generated }}
-    {{- $meta = $meta | append (printf "<span class=\"ai-disclosure\">本篇博客由 %s 生成</span>" .Params.ai_generated) }}
-{{- end }}
-
 {{- if not .Date.IsZero -}}
     {{- $meta = $meta | append (printf "<span title='%s'>%s</span>" (.Date | time.Format "2006-01-02T15:04:05-07:00") (.Date | time.Format (default ":date_long" site.Params.DateFormat))) }}
 {{- end }}
@@ -20,6 +16,10 @@
     {{- with (partial "author.html" .) }}
         {{- $meta = $meta | append (printf "<span>%s</span>" .) }}
     {{- end }}
+{{- end }}
+
+{{- if .Params.ai_generated }}
+    {{- $meta = $meta | append (printf "<span class=\"ai-disclosure\">本篇博客由 %s 生成</span>" .Params.ai_generated) }}
 {{- end }}
 
 {{/* Combine all meta information into a single string with separators and render it as HTML.*/}}
