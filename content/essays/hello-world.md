@@ -40,3 +40,8 @@ print("Hello, Javasee's Blog!")
 ```
 
 写作流程就是：**本地写 Markdown → git push → 自动发布**。就这么简单 (≧▽≦)ﾉ
+
+
+---
+
+*本篇博客由 mimo-v2.6-pro 生成*

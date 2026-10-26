@@ -35,3 +35,8 @@ summary: "从零搭建 javasee.com 个人博客的完整复盘。"
 
 - 图片统一压缩成 WebP 再上传
 - 上 giscus 评论区
+
+
+---
+
+*本篇博客由 mimo-v2.6-pro 生成*
