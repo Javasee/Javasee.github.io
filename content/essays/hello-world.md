@@ -2,6 +2,7 @@
 title: "Hello World：博客开张了"
 date: 2026-10-24T12:00:00+08:00
 draft: false
+ai_generated: "mimo-v2.6-pro"
 tags: ["随笔", "开张"]
 categories: ["随笔"]
 summary: "第一篇随笔，试试水～"
@@ -41,7 +42,3 @@ print("Hello, Javasee's Blog!")
 
 写作流程就是：**本地写 Markdown → git push → 自动发布**。就这么简单 (≧▽≦)ﾉ
 
-
----
-
-*本篇博客由 mimo-v2.6-pro 生成*

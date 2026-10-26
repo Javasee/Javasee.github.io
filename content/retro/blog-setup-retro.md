@@ -2,6 +2,7 @@
 title: "复盘：个人博客搭建（GitHub Pages + Hugo）"
 date: 2026-10-24T13:00:00+08:00
 draft: false
+ai_generated: "mimo-v2.6-pro"
 tags: ["复盘", "博客", "Hugo", "GitHub Pages"]
 categories: ["工程复盘"]
 summary: "从零搭建 javasee.com 个人博客的完整复盘。"
@@ -36,7 +37,3 @@ summary: "从零搭建 javasee.com 个人博客的完整复盘。"
 - 图片统一压缩成 WebP 再上传
 - 上 giscus 评论区
 
-
----
-
-*本篇博客由 mimo-v2.6-pro 生成*

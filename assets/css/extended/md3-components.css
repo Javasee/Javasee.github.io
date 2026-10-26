@@ -245,6 +245,15 @@ a {
     background: var(--md-secondary-container);
     color: var(--md-on-secondary-container);
 }
+/* 上/下一篇：标题小一号、行距放宽 */
+.paginav a > span:not(.title) {
+    font-size: 0.8em;
+    line-height: 1.45;
+}
+/* AI 生成标注 */
+.post-meta .ai-disclosure {
+    opacity: 0.85;
+}
 
 /* ---- 搜索：已迁移至导航栏（见 md3-search.css） ---- */
 
