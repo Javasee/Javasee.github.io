@@ -13,6 +13,7 @@ buildFuture = false
 
 [params]
   env = "production"
+  mainSections = ["essays", "retro"]
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowWordCount = true
