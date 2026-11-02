@@ -15,6 +15,7 @@ buildFuture = false
   env = "production"
   mainSections = ["essays", "retro"]
   defaultTheme = "auto"
+  assets = { favicon = "favicon.svg" }
   ShowReadingTime = true
   ShowWordCount = true
   ShowShareButtons = false
